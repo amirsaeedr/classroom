@@ -18,13 +18,12 @@ from django.urls import path, include
 from rest_framework import routers
 
 from apps.course.views import CourseViewSet
-from apps.profiles.views import ProfileViewSet, UserViewSet, RoleViewSet
+from apps.profiles.views import ProfileViewSet, UserViewSet
 
 router = routers.DefaultRouter()
 router.register(r'courses', CourseViewSet)
 router.register(r'profiles', ProfileViewSet)
 router.register(r'users', UserViewSet)
-router.register(r'roles', RoleViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'', include(router.urls)),
